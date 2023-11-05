@@ -57,11 +57,13 @@ def parser(text: str):
 
 def main():
     while True:
-        user_input = input('Enter a command, if you not stupid russian ').strip().lower()
-        func, data = parser(user_input)
-        print(func(*data))
+        user_input = input('Enter a command, if you`re not a stupid Russian: ').strip().lower()
+        result = parser(user_input)
+        if result is not None:
+            func, data = result
+            print(func(*data))
         if user_input in ('good bye', 'close', 'exit', 'go to hell', '.'):
-            print ('ok.')
+            print('Ok.')
             break
 
 if __name__ == '__main__':
