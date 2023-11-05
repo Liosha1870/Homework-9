@@ -15,14 +15,14 @@ phonebook = {}
 @input_error
 def hello():
     print ('Hello. I am angry bot. I can help you, but if you`re annoying, I`ll accidentally send everyone your browser history')
-
+@input_error
 def add_contact(*args):
     name = args[0]
     phone = args[1]
     phonebook[name] = phone
     print(phonebook)
     return'Okay, I remembered this contact. But I don`t understand why, you don`t have any friends anyway'
-
+@input_error
 def change_contact(*args):
     name = args[0]
     new_phone = args[1]
@@ -31,11 +31,11 @@ def change_contact(*args):
         phonebook[name] = new_phone
         print(phonebook)
         return'I changed the number for this person. I don`t like people who often change their phone'
-
+@input_error
 def find_phone(*args):
     name = args[0]
     return f'{phonebook.get(name)}, do you want to call him? It is unlikely that he will answer... you'
-
+@input_error
 def show_all():
     for i, y in phonebook.items():
 
